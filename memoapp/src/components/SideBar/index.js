@@ -5,6 +5,7 @@ import './index.css';
 
 function SideBar({
   memoArray,
+  selectedMemoIndex,
   onMemoClicked,
   onAddMemoButtonClicked,
   onDeleteMemoButtonClicked,
@@ -14,6 +15,7 @@ function SideBar({
       <SideBarHeader />
       <MemoList
         memoArray={memoArray}
+        selectedMemoIndex={selectedMemoIndex}
         onMemoClicked={onMemoClicked}
         onDeleteMemoButtonClicked={onDeleteMemoButtonClicked}
       />

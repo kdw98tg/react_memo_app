@@ -1,0 +1,13 @@
+.MemoItem {
+    width: 100%;
+    white-space: nowrap; /*한줄이상 안넘어감*/
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding: 5px 8px;
+
+  }
+
+.MemoItem.selected {
+  background-color: rgba(100, 100, 100, 0.5);
+  font-weight: 500;
+}

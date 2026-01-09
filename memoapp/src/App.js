@@ -42,6 +42,12 @@ function App() {
     setSelectedMemoIndex(memosCopy.length - 1);
   };
 
+  const updateMemo = (newMemo) => {
+    const memoArrayCopy = [...memoArray];
+    memoArrayCopy[selectedMemoIndex] = newMemo;
+    setMemoArray(memoArrayCopy);
+  };
+
   const deleteMemo = (index) => {
     const memosCopy = [...memoArray];
     memosCopy.splice(index, 1);
@@ -52,11 +58,15 @@ function App() {
     <div className="App">
       <SideBar
         memoArray={memoArray}
+        selectedMemoIndex={selectedMemoIndex}
         onMemoClicked={onMemoClicked}
         onAddMemoButtonClicked={addMemo}
         onDeleteMemoButtonClicked={deleteMemo}
       />
-      <MemoContainer />
+      <MemoContainer
+        memo={memoArray[selectedMemoIndex]}
+        onMemoUpdated={updateMemo}
+      />
     </div>
   );
 }
