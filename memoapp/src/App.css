@@ -1,0 +1,4 @@
+.App {
+  display: flex;
+  height: 100vh; /*전체 윈도우의 높이*/
+}

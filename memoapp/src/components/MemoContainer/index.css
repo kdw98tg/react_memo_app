@@ -1,0 +1,21 @@
+.MemoContainer {
+  background-color: beige;
+  flex: 1;
+}
+.MemoContainer__title {
+  width: 100%;
+  box-sizing: border-box; /*이 속성 한번 보기*/
+  font-size: 2rem;
+  border: none;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.MemoContainer__content {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  min-height: 600px;
+  border: none;
+  outline: none;
+}
