@@ -21,11 +21,13 @@ function App() {
 
   const [selectedMemoIndex, setSelectedMemoIndex] = useState(0);
 
+  //왼쪽 메모 리스트의 메모 아이템 선택했을 때 작동하는 기능
   const onMemoClicked = (memoIndex) => {
     setSelectedMemoIndex(memoIndex);
     console.log(memoIndex);
   };
 
+  //메모 추가 기능
   const addMemo = () => {
     const date = new Date();
     const memosCopy = [
@@ -42,16 +44,22 @@ function App() {
     setSelectedMemoIndex(memosCopy.length - 1);
   };
 
+  //메모 업데이트 기능
   const updateMemo = (newMemo) => {
     const memoArrayCopy = [...memoArray];
     memoArrayCopy[selectedMemoIndex] = newMemo;
     setMemoArray(memoArrayCopy);
   };
 
+  //메모를 삭제하는 기능
   const deleteMemo = (index) => {
     const memosCopy = [...memoArray];
     memosCopy.splice(index, 1);
     setMemoArray(memosCopy);
+    if(index === selectedMemoIndex)
+    {
+        setSelectedMemoIndex(0);
+    }
   };
 
   return (
