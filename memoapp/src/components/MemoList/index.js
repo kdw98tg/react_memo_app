@@ -15,7 +15,9 @@ function MemoList({
           onMemoClicked={() => {
             onMemoClicked(index);
           }}
-          onDeleteMemoButtonClicked={onDeleteMemoButtonClicked}
+          onDeleteMemoButtonClicked={() => {
+            onDeleteMemoButtonClicked(index);
+          }}
         >
           {memo.title}
         </MemoItem>

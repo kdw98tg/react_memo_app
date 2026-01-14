@@ -1,7 +1,7 @@
 import './App.css';
 import SideBar from './components/SideBar';
 import MemoContainer from './components/MemoContainer';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 function App() {
   const [memoArray, setMemoArray] = useState([
@@ -56,9 +56,8 @@ function App() {
     const memosCopy = [...memoArray];
     memosCopy.splice(index, 1);
     setMemoArray(memosCopy);
-    if(index === selectedMemoIndex)
-    {
-        setSelectedMemoIndex(0);
+    if (index === selectedMemoIndex) {
+      setSelectedMemoIndex(0);
     }
   };
 
