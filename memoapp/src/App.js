@@ -54,9 +54,9 @@ function App() {
   const deleteMemo = (index) => {
     const memosCopy = [...memoArray];
     memosCopy.splice(index, 1);
+    setMemoArray(memosCopy);
     if (index === selectedMemoIndex) {
       setSelectedMemoIndex(0);
-      setMemoArray(memosCopy);
       return 0;
       //가장 최신의 값을 전달받을 수 있음
       //현재 랜더링 시점의 state가 아니라, React가 보관하고 있는 가장 최신의 state를 받음
