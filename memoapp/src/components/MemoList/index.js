@@ -12,11 +12,13 @@ function MemoList({
         <MemoItem
           key={index}
           isSelected={index === selectedMemoIndex}
-          onMemoClicked={() => {
+          onMemoClicked={(e) => {
             onMemoClicked(index);
           }}
-          onDeleteMemoButtonClicked={() => {
-            onDeleteMemoButtonClicked(index);
+          onDeleteMemoButtonClicked={(e) => {
+            onDeleteMemoButtonClicked(index, e);
+            e.preventDefault();
+            e.stopPropagation();
           }}
         >
           {memo.title}
